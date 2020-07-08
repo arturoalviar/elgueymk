@@ -1,0 +1,23 @@
+body.is-light {
+  background: #ffffff;
+}
+
+body.is-light main {
+  background: #ffffff;
+}
+
+body.is-light header {
+  background: #ffffff;
+}
+
+body.is-dark {
+  background: #050505;
+}
+
+body.is-dark main {
+  background: #050505;
+}
+
+body.is-dark header {
+  background: #050505;
+}

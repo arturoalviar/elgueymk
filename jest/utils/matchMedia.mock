@@ -1,0 +1,12 @@
+Object.defineProperty(window, 'matchMedia', {
+  writable: true,
+  configurable: true,
+  value: jest.fn().mockImplementation(query => ({
+    matches: true,
+    media: '(max-width: 1000px)',
+    onchange: null,
+    addEventListener: jest.fn(),
+    removeEventListener: jest.fn(),
+    dispatchEvent: jest.fn(),
+  })),
+})

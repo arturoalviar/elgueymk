@@ -1,0 +1,9 @@
+{
+  "build": {
+    "env": {
+      "PRISMIC_REPO_NAME": "@emk_prismic_repo_name",
+      "PRISMIC_API_KEY": "@emk_prismic_api_key",
+      "GOOGLE_ANALYTICS": "@emk_google_analytics"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "cypress/globals": true,
+    "jest/globals": true
+  },
+  "rules": {
+    "strict": 0,
+    "react/display-name": "off",
+    "react/prop-types": "off"
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:cypress/recommended",
+    "plugin:jest/recommended"
+  ],
+  "plugins": ["cypress", "jest"],
+  "overrides": [
+    {
+      "files": ["cypress/**/*.js"],
+      "rules": {
+        "jest/valid-expect": "off",
+        "jest/expect-expect": "off"
+      }
+    }
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "jest": {
+      "version": 26
+    }
+  }
+}
