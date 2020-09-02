@@ -4,11 +4,12 @@ const {
   allKeyboardsQuery,
   allKeycapSetsQuery,
   allIconsQuery,
+  keycapSetsQuery,
 } = require('./src/gatsby/query')
 
 const {
   createPostPages,
-  createTagsPage,
+  createEMKPage,
   createTagPage,
   getAllTags,
   getAllIcons,
@@ -29,6 +30,7 @@ exports.createPages = async ({ graphql, actions }) => {
     './src/templates/keyboardPost.js'
   )
   const keycapSetTemplate = require.resolve('./src/templates/keycapSetPost.js')
+  const keycapSetsTemplate = require.resolve('./src/templates/keycapSets.js')
   const buildPostTemplate = require.resolve('./src/templates/buildPost.js')
   const tagsPageTemplate = require.resolve('./src/templates/tags.js')
   const tagTemplate = require.resolve('./src/templates/tag.js')
@@ -79,11 +81,16 @@ exports.createPages = async ({ graphql, actions }) => {
     field: 'allKeyboards',
   })
 
+  const keycapSets = await prismicRecursiveFetch({
+    query: keycapSetsQuery,
+    field: 'allKeycapSets',
+  })
+
   const allTags = getAllTags(allDocs)
   const allTagIcons = getAllIcons(allIcons)
 
   // create page that displays all tags
-  createTagsPage({
+  createEMKPage({
     slug: 'tags',
     pageTemplate: tagsPageTemplate,
     context: {
@@ -125,6 +132,16 @@ exports.createPages = async ({ graphql, actions }) => {
     slugPrefix: 'keycap-sets',
     customType: 'allKeycapSets',
     pageTemplate: keycapSetTemplate,
+    createPage,
+  })
+
+  // create page that displays all tags
+  createEMKPage({
+    slug: 'keycap-sets',
+    pageTemplate: keycapSetsTemplate,
+    context: {
+      keycapSets,
+    },
     createPage,
   })
 }
