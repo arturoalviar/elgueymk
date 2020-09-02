@@ -24,7 +24,7 @@ const createPostPages = ({
   })
 }
 
-const createTagsPage = ({ slug, pageTemplate, context, createPage }) => {
+const createEMKPage = ({ slug, pageTemplate, context, createPage }) => {
   createPage({
     path: `/${slug}`,
     component: pageTemplate,
@@ -95,7 +95,7 @@ const getAllIcons = allIcons => {
 }
 
 exports.createPostPages = createPostPages
-exports.createTagsPage = createTagsPage
+exports.createEMKPage = createEMKPage
 exports.createTagPage = createTagPage
 exports.getAllTags = getAllTags
 exports.getAllIcons = getAllIcons
