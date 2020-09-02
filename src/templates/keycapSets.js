@@ -7,10 +7,8 @@ import Container from '@components/container'
 import Layout from '@components/layout'
 import SEO from '@components/seo'
 
-import { EmkPostsData } from '@types'
-
-const KeycapSetsPage = ({ data: { prismic } }) => {
-  const { edges: keycapSets } = prismic.allKeycapSets
+const KeycapSetsPage = ({ pageContext, data: { prismic } }) => {
+  const { keycapSets } = pageContext
   const { content } = prismic.bannerContent
 
   return (
@@ -24,18 +22,11 @@ const KeycapSetsPage = ({ data: { prismic } }) => {
   )
 }
 
-KeycapSetsPage.propTypes = {
-  data: EmkPostsData('allKeycapSets'),
-}
-
 export const keycapSetsQuery = graphql`
   query KeycapSetQuery {
     prismic {
       bannerContent(lang: "en-us", uid: "banner-content-keycap-sets") {
         content
-      }
-      allKeycapSets(sortBy: obtained_DESC) {
-        ...KeycapSetEdges
       }
     }
   }
