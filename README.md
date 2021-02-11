@@ -1,6 +1,20 @@
-# elguey.mk
+<h1 align="center">
+  <a href="https://elgueymk.com/">
+    <img alt="elguey.mk Logo" title="elguey.mk Logo" src="src/images/elgueymk-logo.png" width="96">
+  </a> 
+  </br>
+    elguey.mk
+</h1>
 
-Elguey.mk is a blog that showcases my mechanical keyboard collection.
+<h4 align="center">
+  Elguey.mk is a blog that showcases my mechanical keyboard collection.
+</h4>
+
+<p align="center">
+  <a href="https://twitter.com/intent/follow?screen_name=elgueymk">
+    <img src="https://img.shields.io/twitter/follow/elgueymk.svg?label=Follow%20@elgueymk" alt="Follow @elgueymk" />
+  </a>
+</p>
 
 ## Background
 
